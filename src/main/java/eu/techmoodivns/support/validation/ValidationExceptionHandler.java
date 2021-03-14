@@ -24,7 +24,7 @@ public class ValidationExceptionHandler {
     }
 
     @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
-    @ExceptionHandler(InvalidPayloadException.class)
+    @ExceptionHandler(MissingServletRequestParameterException.class)
     @ResponseBody
     public Map<String, ?> handle(MissingServletRequestParameterException ex, WebRequest request) {
         return Map.of(ex.getParameterName(), "must be present");
