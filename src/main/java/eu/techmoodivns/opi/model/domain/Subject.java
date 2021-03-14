@@ -3,6 +3,7 @@ package eu.techmoodivns.opi.model.domain;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.TextIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.validation.constraints.NotBlank;
@@ -19,7 +20,10 @@ public class Subject {
     private String id;
 
     @NotBlank
+    @TextIndexed(weight = 2)
     private String name;
+
+    @TextIndexed
     private String notes;
 
     @JsonProperty(access = READ_ONLY)
