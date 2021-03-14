@@ -24,7 +24,7 @@ public class SubjectController {
     @GetMapping(path = "/subjects")
     @ResponseStatus(HttpStatus.OK)
     public List<Subject> index(@RequestParam(required = false) String search) {
-        return subjectService.getAll();
+        return subjectService.getAll(search);
     }
 
     @PostMapping(path = "/subjects")

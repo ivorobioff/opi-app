@@ -4,6 +4,7 @@ import eu.techmoodivns.support.cors.CorsConfiguration;
 import eu.techmoodivns.support.data.DataConfiguration;
 import eu.techmoodivns.support.mongo.MongoConfiguration;
 import eu.techmoodivns.support.random.RandomConfiguration;
+import eu.techmoodivns.support.security.SecurityConfiguration;
 import eu.techmoodivns.support.validation.ValidationConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -22,7 +23,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 		ValidationConfiguration.class,
 		CorsConfiguration.class,
 		MongoConfiguration.class,
-		DataConfiguration.class
+		DataConfiguration.class,
+		SecurityConfiguration.class
 })
 public class Application {
 	public static void main(String[] args) {
