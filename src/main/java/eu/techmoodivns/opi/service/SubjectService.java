@@ -45,8 +45,10 @@ public class SubjectService {
                 .getContent();
     }
 
-    public void create(Subject subject) {
+    public Subject create(Subject subject) {
         subjectRepository.save(subject);
+
+        return subject;
     }
 
     public void update(String id, Subject updates) {
@@ -56,5 +58,9 @@ public class SubjectService {
         transportProperties(updates, subject);
 
         subjectRepository.save(subject);
+    }
+
+    public void remove(String id) {
+        subjectRepository.deleteById(id);
     }
 }

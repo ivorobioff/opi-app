@@ -30,13 +30,19 @@ public class SubjectController {
 
     @PostMapping(path = "/subjects")
     @ResponseStatus(HttpStatus.OK)
-    public void create(@RequestBody Subject subject) {
-        subjectService.create(subject);
+    public Subject create(@RequestBody Subject subject) {
+        return subjectService.create(subject);
     }
 
     @PatchMapping(path = "/subjects/{id}")
     @ResponseStatus(HttpStatus.OK)
     public void update(@PathVariable String id, @RequestBody Subject subject) {
         subjectService.update(id, subject);
+    }
+
+    @DeleteMapping(path = "/subjects/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public void remove(@PathVariable String id) {
+        subjectService.remove(id);
     }
 }
