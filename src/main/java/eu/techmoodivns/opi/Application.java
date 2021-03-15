@@ -5,6 +5,8 @@ import eu.techmoodivns.support.data.DataConfiguration;
 import eu.techmoodivns.support.mongo.MongoConfiguration;
 import eu.techmoodivns.support.random.RandomConfiguration;
 import eu.techmoodivns.support.security.SecurityConfiguration;
+import eu.techmoodivns.support.security.actor.ActorProvider;
+import eu.techmoodivns.support.security.actor.SingleActorProvider;
 import eu.techmoodivns.support.validation.ValidationConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,8 +14,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 @SpringBootApplication
 @EnableMongoRepositories
@@ -32,7 +32,15 @@ public class Application {
 	}
 
 	@Bean
-	public PasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder();
+	public ActorProvider singleActorProvider(ApplicationProperties properties) {
+
+		SingleActorProvider actorProvider = new SingleActorProvider(
+				properties.getActorUsername(),
+				properties.getActorPassword()
+		);
+
+		actorProvider.setName(properties.getActorName());
+
+		return actorProvider;
 	}
 }
