@@ -1,7 +1,7 @@
-package eu.techmoodivns.opi.controller;
+package cloud.familythings.opi.controller;
 
-import eu.techmoodivns.opi.model.domain.Subject;
-import eu.techmoodivns.opi.service.SubjectService;
+import cloud.familythings.opi.model.domain.Subject;
+import cloud.familythings.opi.service.SubjectService;
 import eu.techmoodivns.support.data.Scope;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

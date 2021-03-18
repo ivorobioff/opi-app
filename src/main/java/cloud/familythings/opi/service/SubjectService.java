@@ -1,7 +1,7 @@
-package eu.techmoodivns.opi.service;
+package cloud.familythings.opi.service;
 
-import eu.techmoodivns.opi.model.domain.Subject;
-import eu.techmoodivns.opi.repository.SubjectRepository;
+import cloud.familythings.opi.model.domain.Subject;
+import cloud.familythings.opi.repository.SubjectRepository;
 import eu.techmoodivns.support.data.Scope;
 import eu.techmoodivns.support.data.Scopeable;
 import eu.techmoodivns.support.validation.ResourceNotFoundException;

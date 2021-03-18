@@ -1,4 +1,4 @@
-package eu.techmoodivns.opi.model.domain;
+package cloud.familythings.opi.model.domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.data.annotation.CreatedDate;
