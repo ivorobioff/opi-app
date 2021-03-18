@@ -1,18 +1,18 @@
-package eu.techmoodivns.opi;
+package eu.techmoodivns.support.security.simple;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ApplicationProperties {
+public class SimpleSecurityProperties {
 
-    @Value("${eu.techmoodivns.opi.actor.username}")
+    @Value("${eu.techmoodivns.support.security.simple.actor.username}")
     private String actorUsername;
 
-    @Value("${eu.techmoodivns.opi.actor.password}")
+    @Value("${eu.techmoodivns.support.security.simple.actor.password}")
     private String actorPassword;
 
-    @Value("${eu.techmoodivns.opi.actor.name:}")
+    @Value("${eu.techmoodivns.support.security.simple.actor.name:}")
     private String actorName;
 
     public String getActorUsername() {

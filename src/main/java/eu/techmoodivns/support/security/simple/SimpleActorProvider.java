@@ -1,14 +1,15 @@
-package eu.techmoodivns.support.security.actor;
+package eu.techmoodivns.support.security.simple;
 
+import eu.techmoodivns.support.security.actor.ActorProvider;
 import eu.techmoodivns.support.security.authenticator.Authenticator;
 
-public class SingleActorProvider implements ActorProvider {
+public class SimpleActorProvider implements ActorProvider {
 
     private String username;
     private String password;
     private String name;
 
-    public SingleActorProvider(String username, String password) {
+    public SimpleActorProvider(String username, String password) {
         this.username = username;
         this.password = password;
     }
