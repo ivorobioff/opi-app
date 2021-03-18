@@ -33,7 +33,7 @@ public class Subject {
     @NotNull
     private Opinion opinion;
 
-    enum Opinion {
+    public enum Opinion {
         EXCELLENT, GOOD, SO_SO, BAD
     }
 
